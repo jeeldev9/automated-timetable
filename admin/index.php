@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	
-<?php session_start(); ?>
+<?php 
+
+session_start(); 
+ if(!isset($_SESSION['login_id']) || !isset($_SESSION['login_type'])){  
+   echo "Done"; 
+    header('location:login.php');
+  }
+?>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -10,11 +17,11 @@
  	
 
 <?php
-  if(!isset($_SESSION['login_id']))
-    header('location:login.php');
+ 
  include('./header.php'); 
+ echo "Done1"; 
  // include('./auth.php'); 
- ?>
+ ?> 
 
 </head>
 <style>
